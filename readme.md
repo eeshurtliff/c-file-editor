@@ -42,6 +42,7 @@ I found these websites useful in developing this software:
 * [Stack Overflow: Whyuse conio.h?](https://stackoverflow.com/questions/59812014/why-use-conio-h)
 * [Dev: Introduction to Ncurses](https://dev.to/tbhaxor/introduction-to-ncurses-part-1-1bk5)
 * [cplusplus.com - Containers](https://cplusplus.com/reference/stl/)
+* (https://stackoverflow.com/questions/1283302/user-input-of-integers-error-handling)
 
 
 ## Future Work

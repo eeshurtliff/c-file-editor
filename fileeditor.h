@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 
 using namespace std;
 
@@ -6,12 +8,16 @@ using namespace std;
 class FileEditor {
     private:
         string filename;
-        int getLines() const;
+        int numLines = 0; 
+        vector<string> lines = {};
+        int getNumLines() const;
+        void save(int index, string newLine);
 
     public:
         FileEditor(const string& file) : filename(file) {}
+        void updateLines();
         void display() const;
-        void save();
+        bool chooseLine();
         void edit();
 
 
