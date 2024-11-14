@@ -61,7 +61,7 @@ void FileEditor::display() const {
 bool FileEditor::chooseLine(){
         int linesSize = FileEditor::lines.size();
         int &length = FileEditor::numLines;
-        cout << linesSize << " " << length << endl;
+        // cout << linesSize << " " << length << endl;
         cout << "Which line of the file would you like to edit? ";
         int chosenLine;
         // cin >> chosenLine;
@@ -76,7 +76,7 @@ bool FileEditor::chooseLine(){
                         // cin >> newValue;
                         // chosenLine = newValue;
                 } else if (chosenLine > 0 && chosenLine <= linesSize + 1) {
-                        cout << chosenLine << " done!" << endl;
+                        // cout << chosenLine << " done!" << endl;
                         outOfRange = false;  
                 } else {
                         cout << "Incorrect entry. Try again. ";
