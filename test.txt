@@ -1,9 +1,10 @@
-hello
-world
-welcome
-to
-the 
+goodbye
+pumpkin
+tomato
+notebook
+nutmeg
 C++
 file
-editor
-hello
+turkey
+pencil
+ 

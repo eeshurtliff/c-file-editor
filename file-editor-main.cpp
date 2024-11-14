@@ -15,6 +15,7 @@ void menu(){
 
 
 int getChoice(){
+    cout << "Select an option to work with the file: ";
     int choice;
 
     bool badChoice = true;
@@ -27,15 +28,13 @@ int getChoice(){
                 cin.clear();
                 cin.ignore();
                 cout << "Incorrect entry. Try again: ";
-                // cin >> newValue;
-                // chosenLine = newValue;
+                
         } else if (choice > 0 && choice <= 3) {
                 // cout << choice << " done!" << endl;
                 badChoice = false;  
         } else {
                 cout << "Incorrect entry. Try again. ";
-                // cin >> newValue;
-                // chosenLine = newValue;  
+                 
         }
     }
     return choice;
@@ -53,10 +52,10 @@ int main(){
 
     bool stillWorking = true;
     while(stillWorking){
+        file.updateLines();
         menu();
         int choice = getChoice();
         if (choice == 1){
-            file.updateLines();
             file.display();
 
         }else if (choice == 2){

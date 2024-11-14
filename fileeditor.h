@@ -17,7 +17,7 @@ class FileEditor {
         FileEditor(const string& file) : filename(file) {}
         void updateLines();
         void display() const;
-        bool chooseLine();
+        int chooseLine();
         void edit();
 
 

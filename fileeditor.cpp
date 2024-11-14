@@ -34,11 +34,26 @@ void FileEditor::updateLines() {
         string line;
         FileEditor::numLines = 1;
         
-
+        int index = 0;
         while (getline(inputFile, line)) {
-                FileEditor::lines.push_back(line);
+                // cout << "\"" << line << "\"" << endl;
+                if (index < FileEditor::lines.size()){
+                        if (!(line == FileEditor::lines.at(index))){
+                                FileEditor::lines.at(index) = line;
+                        }
+
+                }else{
+                        
+                        FileEditor::lines.push_back(line);
+
+                }
                 FileEditor:: numLines += 1;
+                index += 1;
                 
+        }
+        if (!(FileEditor::lines.back() == " ")){
+
+                FileEditor::lines.push_back(" ");
         }
 
         inputFile.close();
@@ -54,11 +69,12 @@ void FileEditor::display() const {
                 cout << numLines << ". " << line << endl;
                 numLines += 1;
         }
+        cout << endl;
 
 }
 
 
-bool FileEditor::chooseLine(){
+int FileEditor::chooseLine(){
         int linesSize = FileEditor::lines.size();
         int &length = FileEditor::numLines;
         // cout << linesSize << " " << length << endl;
@@ -84,6 +100,8 @@ bool FileEditor::chooseLine(){
                         // chosenLine = newValue;  
                 }
         }
+
+        // cout << "choice: " << chosenLine << endl;
         
 
         return chosenLine - 1;
@@ -101,19 +119,21 @@ void FileEditor::save(int index, string newLine){
                 if (i != index){
                         myFile << FileEditor::lines.at(i) << endl;
                 }else{
+                
                         myFile << newLine << endl;
                 }
         }
 
         myFile.close();
 
-        
+        cout << "Saved!" << endl << endl;
 
 }
 
 
 void FileEditor::edit(){
         int index = FileEditor::chooseLine();
+        // cout << "line: " << index << endl;
         
 
         cout << "NOTE: this will remove all of the orignal line of the file and replace it with new text. Type 'q' to abort. " << endl;
