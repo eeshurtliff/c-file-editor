@@ -1,12 +1,15 @@
 #include <iostream>
 #include "fileeditor.h"
 #include <fstream>
+// #include <boost/algorithm/string.hpp>
 #include <string>
 #include <vector>
 #include <conio.h>
 #include <typeinfo>
 
+
 using namespace std;
+// using namespace boost::algorithm;
 
 
 
@@ -111,22 +114,37 @@ void FileEditor::save(int index, string newLine){
         int &vectorLines = FileEditor::numLines;
 
         ofstream myFile(FileEditor::filename);
+       
 
         string changedLine;
         int numLines = 0;
+
         
-        for (int i=0; i < vectorLines; i++){
-                if (i != index){
-                        myFile << FileEditor::lines.at(i) << endl;
-                }else{
+
+        if (myFile.is_open()) {
                 
-                        myFile << newLine << endl;
+                for (int i=0; i < vectorLines-1; i++){
+                        if (i != index){
+                                myFile << FileEditor::lines.at(i) << endl;
+                                cout << FileEditor::lines.at(i) << endl;
+                        }else{
+                        
+                                myFile << newLine << endl;
+                                cout << newLine << endl;
+                        }
+                        
                 }
+
+        }else{
+                cout << "There was an error opening th file. " << endl;
         }
+
+        
+        cout << "Your changes have been saved" << endl;
 
         myFile.close();
 
-        cout << "Saved!" << endl << endl;
+        
 
 }
 
@@ -138,16 +156,30 @@ void FileEditor::edit(){
 
         cout << "NOTE: this will remove all of the orignal line of the file and replace it with new text. Type 'q' to abort. " << endl;
         
-        cout << "Type the new line of the file: ";
+        cout << "Type the new line of the file(type \'| \' to signal the end of the line): ";
         string newLine;
-        cin >> newLine;
+        getline(cin, newLine, '|');
+        bool beforeLine = true;
+        // for (int i=0; i < newLine.length() -1; i++){
+        //         if (newLine[i] != ' ' && newLine[i] != '\n'){
+        //                 beforeLine = false;
+        //         }
+        //         if (beforeLine = false){
+        //                 newLine = newLine.substr(i);
+        //         }
+        // }
+        newLine = newLine.substr(1);
+        cout << "/" << newLine << "/" << endl;
+        // cin >> newLine;
         if (newLine != "q"){
                 string saveResponse;
                 cout << "Would you like to save this change?(y/n) " << endl;
                 cin >> saveResponse;
                 if (saveResponse == "y" || saveResponse == "Y" ){
+                        
                         FileEditor::save(index, newLine);
                 }
+        
                 else{
                         cout << "Your change will not be saved. " << endl;
                 }

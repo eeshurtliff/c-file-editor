@@ -24,7 +24,7 @@ Instructions for using the software:
 
 To recreate the development environment, you need the following software and/or libraries with the specified versions:
 
-* First thing here
+* Install a C++ complier. I used Visual Studio Code to write this program.
 *
 *
 
@@ -43,12 +43,14 @@ I found these websites useful in developing this software:
 * [Dev: Introduction to Ncurses](https://dev.to/tbhaxor/introduction-to-ncurses-part-1-1bk5)
 * [cplusplus.com - Containers](https://cplusplus.com/reference/stl/)
 * (https://stackoverflow.com/questions/1283302/user-input-of-integers-error-handling)
+* [Last Element of Vector in C++ (Accessing and Updating)](https://www.geeksforgeeks.org/last-element-of-vector-in-cpp-accessing-and-updating/)
+* [Getline in C++ – cin getline() Function Example](https://www.freecodecamp.org/news/getline-in-cpp-cin-getline-function-example/)
 
 
 ## Future Work
 
 The following items I plan to fix, improve, and/or add to this project in the future:
 
-* [ ] First thing here
-* [ ]
-* [ ]
+* [ ] Improve file input to remove extra spaces and enters.
+* [ ] Allow the user to create and edit more than one file.
+* [ ]Create an option to view all of the existing files.
