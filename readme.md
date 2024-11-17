@@ -1,32 +1,33 @@
 ## Overview
 
-**Project Title**:
+**File Editor**:
 
-**Project Description**:
+**View and edit lines of a file**:
 
 **Project Goals**:
+- Create a class to handle actions to a file
+- Allow the main function to access an object of the class
+- Make it possible for the fileEditor class to read and write to files. 
 
 ## Instructions for Build and Use
 
 Steps to build and/or run the software:
 
-1. First step here
-2.
-3.
+1. Make sure you are able to run a C++ file.
+2. play the file-editor-main.cpp file
+3. Read the instructions and follow the options.
 
 Instructions for using the software:
 
-1. First step here
-2.
-3.
+1. Choose from the options in the menu. 
+2. answer the questions in the option you chose. 
 
 ## Development Environment 
 
 To recreate the development environment, you need the following software and/or libraries with the specified versions:
 
-* Install a C++ complier. I used Visual Studio Code to write this program.
-*
-*
+* Install a C++ complier. I used Visual Studio Code to write this program. If you choose to do this, you need to get the C/C++ Extention Pack and the [Desktop development with C++ workload](https://visualstudio.microsoft.com/downloads/#remote-tools-for-visual-studio-2022)
+* if you use Visual Studio Code, you must open the program through the Developer Command Prompt for VS. 
 
 ## Useful Websites to Learn More
 
